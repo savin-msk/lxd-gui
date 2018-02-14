@@ -52,10 +52,15 @@ import Page500 from '@/views/pages/Page500'
 import Login from '@/views/pages/Login'
 import Register from '@/views/pages/Register'
 
+// Views - lxd
+import ServerView from '../components/lxd/ServerView.vue'
+import ContainersView from '../components/lxd/ContainersView.vue'
+
+
+
 Vue.use(Router)
 
 export default new Router({
-  mode: 'hash', // Demo is living in GitHub.io, so required!
   linkActiveClass: 'open active',
   scrollBehavior: () => ({ y: 0 }),
   routes: [
@@ -268,34 +273,14 @@ export default new Router({
       ]
     },
     {
-      path: '/pages',
-      redirect: '/pages/404',
-      name: 'Pages',
-      component: {
-        render (c) { return c('router-view') }
-      },
-      children: [
-        {
-          path: '404',
-          name: 'Page404',
-          component: Page404
-        },
-        {
-          path: '500',
-          name: 'Page500',
-          component: Page500
-        },
-        {
-          path: 'login',
-          name: 'Login',
-          component: Login
-        },
-        {
-          path: 'register',
-          name: 'Register',
-          component: Register
-        }
-      ]
+      path: '/server',
+      name: 'Server',
+      component: ServerView
+    },
+    {
+      path: '/containers',
+      name: 'ContainersView',
+      component: ContainersView
     }
   ]
 })

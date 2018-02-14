@@ -18,6 +18,8 @@
 <script>
 import nav from '../_nav'
 import { Header as AppHeader, Sidebar, Aside as AppAside, Footer as AppFooter, Breadcrumb } from '../components/'
+import ServerView from '../components/lxd/ServerView.vue'
+import ContainersView from '../components/lxd/ContainersView.vue'
 
 export default {
   name: 'full',
@@ -26,7 +28,9 @@ export default {
     Sidebar,
     AppAside,
     AppFooter,
-    Breadcrumb
+    Breadcrumb,
+    ServerView,
+    ContainersView,
   },
   data () {
     return {
