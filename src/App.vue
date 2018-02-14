@@ -6,10 +6,10 @@
 export default {
   name: 'app',
   created () {
-    this.$store.dispatch("LOAD_SERVER_DETAILS").then(response => {
-      console.log("Got some data, now lets show something in this component")
+    this.$store.dispatch('LOAD_SERVER_DETAILS').then(response => {
+      console.log('Got some data, now lets show something in this component')
     }, error => {
-      console.error("Got nothing from server. Prompt user to check internet connection and try again")
+      console.error('Got nothing from server. Prompt user to check internet connection and try again')
     })
   }
 }
