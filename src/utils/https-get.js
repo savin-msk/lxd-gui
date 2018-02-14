@@ -14,17 +14,18 @@ function createAxios() {
     error => {
       eventHub.$emit('request-error')
       return Promise.reject(error)
-    })
-    reader.interceptors.response.use(
-      response => {
-        console.log('after-request')
-        eventHub.$emit('after-response')
-        return response
-      },
-      error => {
-        eventHub.$emit('response-error')
-        return Promise.reject(error)
-    })
+    }
+  )
+  reader.interceptors.response.use(
+    response => {
+      console.log('after-request')
+      eventHub.$emit('after-response')
+      return response
+    },
+    error => {
+      eventHub.$emit('response-error')
+      return Promise.reject(error)
+  })
   return reader
 }
 
